@@ -1,0 +1,72 @@
+/**
+ * this is the main configuration file of your bit workspace.
+ * for full documentation, please see: https://bit.dev/docs/workspace/workspace-configuration
+ **/{
+  "$schema": "https://static.bit.dev/teambit/schemas/schema.json",
+  /**
+   * main configuration of the Bit workspace.
+   **/
+  "teambit.workspace/workspace": {
+    "name": "shared-node-components",
+    "icon": "https://static.bit.dev/bit-logo.svg",
+    "defaultDirectory": "components/{owner}/{scope}/{name}",
+    "defaultScope": "corpdk.node"
+  },
+  /**
+   * main configuration for component dependency resolution.
+   **/
+  "teambit.dependencies/dependency-resolver": {
+    /**
+     * choose the package manager for Bit to use. you can choose between 'yarn', 'pnpm'
+     */
+    "packageManager": "teambit.dependencies/pnpm",
+    "policy": {
+      "dependencies": {
+        "@babel/runtime": "7.22.6",
+        "@types/testing-library__jest-dom": "5.14.6",
+        "core-js": "^3.31.0"
+      },
+      "peerDependencies": {}
+    },
+    "linkCoreAspects": true,
+    "rootComponents": true,
+    "strictPeerDependencies": true
+  },
+  /**
+   * workspace variants allow to set different subsets of configuration for components in your
+   * workspace. this is extremely useful for upgrading, aligning and building components with a new
+   * set of dependencies. a rule can be a directory or a component-id/namespace, in which case,
+   * wrap the rule with curly brackets (e.g. `"{ui/*}": {}`)
+   * see https://bit.dev/docs/workspace/variants for more info.
+   **/
+  "teambit.workspace/variants": {
+    /**
+     * "*" is a special rule which applied on all components in the workspace.
+     **/
+    "*": {
+      /**
+       * uncomment to apply the chosen environment on all components.
+       **/
+      // "teambit.react/react": { }
+      "teambit.pkg/pkg": {
+        "packageManagerPublishArgs": [
+          "--access public"
+        ],
+        "packageJson": {
+          "private": false,
+          "name": "@corpdk/{scope}.{name}",
+          "license": "MIT",
+          "repository": {
+            "type": "git",
+            "url": "https://github.com/CorpDK/shared-node-components.git"
+          },
+          "author": "CorpDK",
+          "bugs": {
+            "url": "https://github.com/CorpDK/shared-node-components/issues"
+          },
+          "homepage": "https://github.com/CorpDK/shared-node-components"
+        }
+      }
+    }
+  }
+}

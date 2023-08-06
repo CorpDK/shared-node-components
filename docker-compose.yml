@@ -1,0 +1,23 @@
+name: bit-dev-server
+services:
+  bit:
+    build:
+      context: .
+      args:
+        BIT_VERSION: ${BIT_VERSION}
+    image: corpdk/bit-dev:${BIT_VERSION}
+    container_name: bit
+    ports:
+      - 3000:3000
+      - 3300:3300
+    restart: unless-stopped
+    sysctls:
+      net.ipv6.conf.all.disable_ipv6: 0
+      net.ipv6.conf.default.disable_ipv6: 0
+    volumes:
+      - ./:/code
+
+networks:
+  default:
+    external: true
+    name: local-infra-main-net

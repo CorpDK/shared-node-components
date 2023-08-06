@@ -1,0 +1,40 @@
+# This workflow hard-tags and exports soft-tagged components
+name: PR Check
+
+on:
+  pull_request:
+    branches: [ main ]
+    types: [ opened, edited, reopened, synchronize ]
+
+jobs:
+  pr-check:
+    runs-on: ubuntu-latest
+    env:
+      BIT_VERSION: 0.1.74
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+    - name: Setup Node.js environment
+      uses: actions/setup-node@v3
+      with:
+        node-version: '16.x'
+        registry-url: 'https://registry.npmjs.org'
+    - name: Install Bit Version Manager 
+      run: npm i -g @teambit/bvm
+    - name: Install latest Bit version 
+      run: bvm install ${BIT_VERSION}
+    - name: add bvm bin folder to path
+      run: echo "$HOME/bin" >> $GITHUB_PATH
+    - name: Set up bit config
+      run: |
+          bit config set analytics_reporting false
+          bit config set anonymous_reporting false
+    - name: Install packages using bit
+      run: bit install
+    - name: Second Bit Install as Using custom envs 
+      run: bit install
+    - name: Check Bit Workspace issues
+      run: bit status --strict
+    - name: Bit Build Components
+      run: bit build

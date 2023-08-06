@@ -1,0 +1,54 @@
+# This workflow hard-tags and exports soft-tagged components
+name: Tag and Export Components
+
+on:
+  push:
+    branches: [ main ]
+#   pull_request:
+#     branches: [ main ]
+#     types: [ closed ]
+
+jobs:
+  tag-and-export:
+    runs-on: ubuntu-latest
+    if: "!contains(github.event.head_commit.message, '[skip-ci]')"
+    env:
+      BIT_TOKEN: ${{ secrets.BIT_TOKEN }}
+      NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      NPM_CONFIG_PROVENANCE: true
+      BIT_VERSION: 0.1.74
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+    - name: Setup Node.js environment
+      uses: actions/setup-node@v3
+      with:
+        node-version: '16.x'
+        registry-url: 'https://registry.npmjs.org'
+    - name: Install Bit Version Manager 
+      run: npm i -g @teambit/bvm
+    - name: Install latest Bit version 
+      run: bvm install ${BIT_VERSION}
+    - name: add bvm bin folder to path
+      run: echo "$HOME/bin" >> $GITHUB_PATH
+    - name: Set up bit config
+      run: |
+          bit config set analytics_reporting false
+          bit config set anonymous_reporting false
+          bit config set user.token $BIT_TOKEN
+    - name: Install packages using bit
+      run: bit install
+    - name: Second Bit Install as Using custom envs 
+      run: bit install
+    - name: Hard-tag pending components
+      run: bit tag --persist
+    - name: Export components
+      run: bit export
+    - name: Commit changes made to .bitmap
+      run: |
+        git config --global user.name '${{ github.actor }}'
+        git config --global user.email '${{ github.actor }}@users.noreply.github.com'
+        git add .bitmap
+        git commit -m "update .bitmap with new component versions (automated). [skip-ci]"
+        git push
