@@ -11,7 +11,7 @@
 {
     "auth/keycloak-client": {
         "scope": "corpdk.node",
-        "version": "0.0.1",
+        "version": "0.0.2",
         "mainFile": "index.ts",
         "rootDir": "components/corpdk/node/auth/keycloak-client",
         "nextVersion": {
@@ -29,7 +29,7 @@
     },
     "envs/my-node-env": {
         "scope": "corpdk.node",
-        "version": "0.0.1",
+        "version": "0.0.2",
         "mainFile": "index.ts",
         "rootDir": "components/corpdk/node/envs/my-node-env",
         "nextVersion": {
