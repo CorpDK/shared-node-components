@@ -10,7 +10,7 @@ jobs:
   pr-check:
     runs-on: ubuntu-latest
     env:
-      BIT_VERSION: 0.1.74
+      BIT_VERSION: 0.2.14
 
     steps:
     - name: Checkout
@@ -18,7 +18,7 @@ jobs:
     - name: Setup Node.js environment
       uses: actions/setup-node@v3
       with:
-        node-version: '16.x'
+        node-version: '18.x'
         registry-url: 'https://registry.npmjs.org'
     - name: Install Bit Version Manager 
       run: npm i -g @teambit/bvm
