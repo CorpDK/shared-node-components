@@ -11,39 +11,15 @@
 {
     "auth/keycloak-client": {
         "scope": "corpdk.node",
-        "version": "0.0.2",
+        "version": "0.0.3",
         "mainFile": "index.ts",
-        "rootDir": "components/corpdk/node/auth/keycloak-client",
-        "nextVersion": {
-            "version": "patch",
-            "message": "initial components",
-            "username": "Debraj Kundu",
-            "email": "kundudebraj4272@gmail.com"
-        },
-        "config": {
-            "teambit.envs/envs": {
-                "env": "corpdk.node/envs/my-node-env"
-            },
-            "corpdk.node/envs/my-node-env": {}
-        }
+        "rootDir": "components/corpdk/node/auth/keycloak-client"
     },
     "envs/my-node-env": {
         "scope": "corpdk.node",
-        "version": "0.0.2",
+        "version": "0.0.3",
         "mainFile": "index.ts",
-        "rootDir": "components/corpdk/node/envs/my-node-env",
-        "nextVersion": {
-            "version": "patch",
-            "message": "initial components",
-            "username": "Debraj Kundu",
-            "email": "kundudebraj4272@gmail.com"
-        },
-        "config": {
-            "teambit.envs/env": {},
-            "teambit.envs/envs": {
-                "env": "teambit.envs/env"
-            }
-        }
+        "rootDir": "components/corpdk/node/envs/my-node-env"
     },
     "$schema-version": "15.0.0"
 }
