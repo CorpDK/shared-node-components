@@ -10,8 +10,8 @@
 
 {
     "auth/keycloak-client": {
-        "scope": "",
-        "version": "",
+        "scope": "corpdk.node",
+        "version": "0.0.1",
         "mainFile": "index.ts",
         "rootDir": "components/corpdk/node/auth/keycloak-client",
         "nextVersion": {
@@ -28,8 +28,8 @@
         }
     },
     "envs/my-node-env": {
-        "scope": "",
-        "version": "",
+        "scope": "corpdk.node",
+        "version": "0.0.1",
         "mainFile": "index.ts",
         "rootDir": "components/corpdk/node/envs/my-node-env",
         "nextVersion": {
