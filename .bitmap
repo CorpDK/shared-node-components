@@ -15,11 +15,65 @@
         "mainFile": "index.ts",
         "rootDir": "components/corpdk/node/auth/keycloak-client"
     },
+    "connector/mongodb": {
+        "scope": "",
+        "version": "",
+        "mainFile": "index.ts",
+        "rootDir": "components/corpdk/node/connector/mongodb",
+        "nextVersion": {
+            "version": "patch",
+            "message": "node components init creation",
+            "username": "Debraj Kundu",
+            "email": "kundudebraj4272@gmail.com"
+        },
+        "config": {
+            "teambit.envs/envs": {
+                "env": "corpdk.node/envs/my-node-env"
+            },
+            "corpdk.node/envs/my-node-env": {}
+        }
+    },
+    "connector/postgresql": {
+        "scope": "",
+        "version": "",
+        "mainFile": "index.ts",
+        "rootDir": "components/corpdk/node/connector/postgresql",
+        "nextVersion": {
+            "version": "patch",
+            "message": "node components init creation",
+            "username": "Debraj Kundu",
+            "email": "kundudebraj4272@gmail.com"
+        },
+        "config": {
+            "teambit.envs/envs": {
+                "env": "corpdk.node/envs/my-node-env"
+            },
+            "corpdk.node/envs/my-node-env": {}
+        }
+    },
     "envs/my-node-env": {
         "scope": "corpdk.node",
         "version": "0.0.3",
         "mainFile": "index.ts",
         "rootDir": "components/corpdk/node/envs/my-node-env"
+    },
+    "logger/winston": {
+        "scope": "",
+        "version": "",
+        "mainFile": "index.ts",
+        "rootDir": "components/corpdk/node/logger/winston",
+        "nextVersion": {
+            "version": "patch",
+            "message": "node components init creation",
+            "username": "Debraj Kundu",
+            "email": "kundudebraj4272@gmail.com"
+        },
+        "config": {
+            "teambit.envs/envs": {
+                "env": "corpdk.node/envs/my-node-env"
+            },
+            "corpdk.node/envs/my-node-env": {}
+        }
     },
     "$schema-version": "15.0.0"
 }

@@ -86,7 +86,7 @@ importers:
         specifier: 5.9.5
         version: registry.npmjs.org/@types/testing-library__jest-dom@5.9.5
 
-  node_modules/.bit_roots/corpdk.node_envs_my-node-env:
+  node_modules/.bit_roots/corpdk.node_envs_my-node-env@0.0.3:
     dependencies:
       '@corpdk/node.auth.keycloak-client':
         specifier: workspace:*
