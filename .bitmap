@@ -11,92 +11,33 @@
 {
     "auth/keycloak-client": {
         "scope": "corpdk.node",
-        "version": "0.0.3",
+        "version": "0.0.4",
         "mainFile": "index.ts",
-        "rootDir": "components/corpdk/node/auth/keycloak-client",
-        "nextVersion": {
-            "version": "patch",
-            "message": "node environment updated",
-            "username": "Debraj Kundu",
-            "email": "kundudebraj4272@gmail.com"
-        },
-        "config": {
-            "corpdk.node/envs/nodejs": {},
-            "teambit.envs/envs": {
-                "env": "corpdk.node/envs/nodejs"
-            }
-        }
+        "rootDir": "components/corpdk/node/auth/keycloak-client"
     },
     "connector/mongodb": {
-        "scope": "",
-        "version": "",
+        "scope": "corpdk.node",
+        "version": "0.0.1",
         "mainFile": "index.ts",
-        "rootDir": "components/corpdk/node/connector/mongodb",
-        "nextVersion": {
-            "version": "patch",
-            "message": "node environment updated",
-            "username": "Debraj Kundu",
-            "email": "kundudebraj4272@gmail.com"
-        },
-        "config": {
-            "corpdk.node/envs/nodejs": {},
-            "teambit.envs/envs": {
-                "env": "corpdk.node/envs/nodejs"
-            }
-        }
+        "rootDir": "components/corpdk/node/connector/mongodb"
     },
     "connector/postgresql": {
-        "scope": "",
-        "version": "",
+        "scope": "corpdk.node",
+        "version": "0.0.1",
         "mainFile": "index.ts",
-        "rootDir": "components/corpdk/node/connector/postgresql",
-        "nextVersion": {
-            "version": "patch",
-            "message": "node environment updated",
-            "username": "Debraj Kundu",
-            "email": "kundudebraj4272@gmail.com"
-        },
-        "config": {
-            "corpdk.node/envs/nodejs": {},
-            "teambit.envs/envs": {
-                "env": "corpdk.node/envs/nodejs"
-            }
-        }
+        "rootDir": "components/corpdk/node/connector/postgresql"
     },
     "envs/nodejs": {
-        "scope": "",
-        "version": "",
+        "scope": "corpdk.node",
+        "version": "0.0.1",
         "mainFile": "index.ts",
-        "rootDir": "components/corpdk/node/envs/nodejs",
-        "nextVersion": {
-            "version": "patch",
-            "message": "node environment updated",
-            "username": "Debraj Kundu",
-            "email": "kundudebraj4272@gmail.com"
-        },
-        "config": {
-            "teambit.envs/envs": {
-                "env": "teambit.envs/env"
-            }
-        }
+        "rootDir": "components/corpdk/node/envs/nodejs"
     },
     "logger/winston": {
-        "scope": "",
-        "version": "",
+        "scope": "corpdk.node",
+        "version": "0.0.1",
         "mainFile": "index.ts",
-        "rootDir": "components/corpdk/node/logger/winston",
-        "nextVersion": {
-            "version": "patch",
-            "message": "node environment updated",
-            "username": "Debraj Kundu",
-            "email": "kundudebraj4272@gmail.com"
-        },
-        "config": {
-            "corpdk.node/envs/nodejs": {},
-            "teambit.envs/envs": {
-                "env": "corpdk.node/envs/nodejs"
-            }
-        }
+        "rootDir": "components/corpdk/node/logger/winston"
     },
     "$schema-version": "15.0.0"
 }
