@@ -13,7 +13,19 @@
         "scope": "corpdk.node",
         "version": "0.0.3",
         "mainFile": "index.ts",
-        "rootDir": "components/corpdk/node/auth/keycloak-client"
+        "rootDir": "components/corpdk/node/auth/keycloak-client",
+        "nextVersion": {
+            "version": "patch",
+            "message": "node environment updated",
+            "username": "Debraj Kundu",
+            "email": "kundudebraj4272@gmail.com"
+        },
+        "config": {
+            "corpdk.node/envs/nodejs": {},
+            "teambit.envs/envs": {
+                "env": "corpdk.node/envs/nodejs"
+            }
+        }
     },
     "connector/mongodb": {
         "scope": "",
@@ -22,15 +34,16 @@
         "rootDir": "components/corpdk/node/connector/mongodb",
         "nextVersion": {
             "version": "patch",
-            "message": "node components init creation",
+            "message": "node environment updated",
             "username": "Debraj Kundu",
             "email": "kundudebraj4272@gmail.com"
         },
         "config": {
+            "corpdk.node/envs/my-node-env": {},
+            "corpdk.node/envs/nodejs": {},
             "teambit.envs/envs": {
-                "env": "corpdk.node/envs/my-node-env"
-            },
-            "corpdk.node/envs/my-node-env": {}
+                "env": "corpdk.node/envs/nodejs"
+            }
         }
     },
     "connector/postgresql": {
@@ -40,22 +53,34 @@
         "rootDir": "components/corpdk/node/connector/postgresql",
         "nextVersion": {
             "version": "patch",
-            "message": "node components init creation",
+            "message": "node environment updated",
+            "username": "Debraj Kundu",
+            "email": "kundudebraj4272@gmail.com"
+        },
+        "config": {
+            "corpdk.node/envs/my-node-env": {},
+            "corpdk.node/envs/nodejs": {},
+            "teambit.envs/envs": {
+                "env": "corpdk.node/envs/nodejs"
+            }
+        }
+    },
+    "envs/nodejs": {
+        "scope": "",
+        "version": "",
+        "mainFile": "index.ts",
+        "rootDir": "components/corpdk/node/envs/nodejs",
+        "nextVersion": {
+            "version": "patch",
+            "message": "node environment updated",
             "username": "Debraj Kundu",
             "email": "kundudebraj4272@gmail.com"
         },
         "config": {
             "teambit.envs/envs": {
-                "env": "corpdk.node/envs/my-node-env"
-            },
-            "corpdk.node/envs/my-node-env": {}
+                "env": "teambit.envs/env"
+            }
         }
-    },
-    "envs/my-node-env": {
-        "scope": "corpdk.node",
-        "version": "0.0.3",
-        "mainFile": "index.ts",
-        "rootDir": "components/corpdk/node/envs/my-node-env"
     },
     "logger/winston": {
         "scope": "",
@@ -64,15 +89,16 @@
         "rootDir": "components/corpdk/node/logger/winston",
         "nextVersion": {
             "version": "patch",
-            "message": "node components init creation",
+            "message": "node environment updated",
             "username": "Debraj Kundu",
             "email": "kundudebraj4272@gmail.com"
         },
         "config": {
+            "corpdk.node/envs/my-node-env": {},
+            "corpdk.node/envs/nodejs": {},
             "teambit.envs/envs": {
-                "env": "corpdk.node/envs/my-node-env"
-            },
-            "corpdk.node/envs/my-node-env": {}
+                "env": "corpdk.node/envs/nodejs"
+            }
         }
     },
     "$schema-version": "15.0.0"
