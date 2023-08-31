@@ -1,0 +1,1 @@
+export { winston } from './winston';
